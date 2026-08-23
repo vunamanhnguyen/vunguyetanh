@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vũ Nguyệt Ánh — Coming Soon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    :root{
+      --ink:#25313b;
+      --muted:#68727a;
+      --peach:#f5c6b2;
+      --peach-light:#f9e5dc;
+      --peach-deep:#e99a78;
+      --cream:#fbf7f3;
+      --white:#fff;
+      --line:rgba(37,49,59,.12);
+
+      --serif:"Playfair Display",Georgia,serif;
+      --sans:"DM Sans",Arial,sans-serif;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--ink);
+      background:var(--cream);
+      font-family:var(--sans);
+      line-height:1.65;
+      transition:background .25s,color .25s;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+
+      background:
+        radial-gradient(
+          circle at 75% 22%,
+          rgba(245,198,178,.70),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #fbf7f3 0%,
+          #f8eee8 58%,
+          #f2d8cc 100%
+        );
+    }
+
+    .container{
+      width:min(1160px,calc(100% - 40px));
+      margin:auto;
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+
+    .nav{
+      position:fixed;
+      z-index:50;
+      top:16px;
+      left:50%;
+      transform:translateX(-50%);
+
+      width:min(1050px,calc(100% - 28px));
+
+      padding:9px 10px 9px 18px;
+
+      border:1px solid rgba(255,255,255,.75);
+      background:rgba(255,255,255,.76);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border-radius:999px;
+
+      box-shadow:
+        0 12px 35px rgba(50,38,31,.08);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .nav-brand{
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .lang-btn,
+    .theme-toggle{
+      border:0;
+      background:transparent;
+      color:#59646d;
+
+      height:34px;
+      min-width:34px;
+
+      padding:0 8px;
+
+      border-radius:999px;
+
+      cursor:pointer;
+
+      font:700 10px var(--sans);
+
+      transition:.2s;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active,
+    .theme-toggle:hover{
+      background:var(--peach-light);
+      color:var(--ink);
+    }
+
+    .theme-toggle{
+      font-size:14px;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .coming-soon{
+      flex:1;
+
+      display:flex;
+      align-items:center;
+
+      padding:
+        120px 0
+        60px;
+    }
+
+    .coming-grid{
+      width:100%;
+
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+
+      gap:50px;
+
+      align-items:center;
+    }
+
+    /* =========================
+       LEFT CONTENT
+    ========================= */
+
+    .coming-copy{
+      padding-left:4%;
+      position:relative;
+      z-index:2;
+    }
+
+    .kicker{
+      margin:0 0 16px;
+
+      color:#a36e59;
+
+      font-size:11px;
+      font-weight:700;
+
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .coming-title{
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:clamp(58px,7vw,92px);
+
+      line-height:.95;
+
+      letter-spacing:-.055em;
+
+      font-weight:600;
+    }
+
+    .coming-title em{
+      display:block;
+
+      color:#b67f67;
+
+      font-style:italic;
+      font-weight:500;
+    }
+
+    .coming-description{
+      max-width:470px;
+
+      margin:30px 0 0;
+
+      padding-top:20px;
+
+      border-top:1px solid rgba(37,49,59,.30);
+
+      color:#4f5b64;
+
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .coming-note{
+      margin-top:24px;
+
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 15px;
+
+      background:rgba(255,255,255,.48);
+
+      border:1px solid rgba(255,255,255,.7);
+
+      border-radius:999px;
+
+      color:#59646d;
+
+      font-size:11px;
+      font-weight:600;
+
+      box-shadow:0 10px 25px rgba(58,43,35,.05);
+    }
+
+    .coming-note i{
+      color:var(--peach-deep);
+      font-size:12px;
+    }
+
+    /* =========================
+       PHOTO
+    ========================= */
+
+    .coming-photo{
+      min-height:580px;
+
+      position:relative;
+
+      display:flex;
+
+      align-items:flex-end;
+      justify-content:center;
+    }
+
+    .coming-photo::before{
+      content:"";
+
+      position:absolute;
+
+      width:min(600px,100%);
+      aspect-ratio:1;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,.34);
+
+      border:1px solid rgba(255,255,255,.65);
+
+      box-shadow:
+        0 30px 80px rgba(83,57,45,.06);
+    }
+
+    .coming-photo::after{
+      content:"";
+
+      position:absolute;
+
+      width:320px;
+      height:80px;
+
+      bottom:20px;
+
+      background:rgba(78,54,43,.10);
+
+      filter:blur(25px);
+
+      border-radius:50%;
+    }
+
+    .coming-photo img{
+      position:relative;
+      z-index:2;
+
+      width:min(590px,100%);
+
+      max-height:650px;
+
+      object-fit:contain;
+      object-position:center bottom;
+
+      filter:
+        drop-shadow(
+          20px 22px 18px
+          rgba(64,42,34,.14)
+        );
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer{
+      flex-shrink:0;
+
+      position:relative;
+      z-index:5;
+
+      background:#1e272f;
+
+      color:#b9c0c5;
+
+      padding:20px 0;
+    }
+
+    .footer-inner{
+      display:flex;
+
+      justify-content:space-between;
+      align-items:center;
+
+      gap:20px;
+
+      font-size:11px;
+    }
+
+    .footer strong{
+      color:#fff;
+    }
+
+    .footer-brand{
+      font-weight:600;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal{
+      opacity:0;
+
+      transform:translateY(18px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:none;
+    }
+
+    .photo-reveal{
+      transition-delay:.15s;
+    }
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    body.dark{
+      --ink:#f2f4f5;
+      --muted:#aeb7bd;
+      --cream:#11171c;
+      --white:#171e24;
+      --line:rgba(255,255,255,.12);
+      --peach-light:#302722;
+      --peach:#6d5146;
+      --peach-deep:#e3a082;
+
+      background:#11171c;
+    }
+
+    body.dark .page{
+      background:
+        radial-gradient(
+          circle at 75% 22%,
+          rgba(109,81,70,.50),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #11171c 0%,
+          #1b2025 58%,
+          #2b2420 100%
+        );
+    }
+
+    body.dark .nav{
+      background:rgba(22,29,35,.82);
+      border-color:rgba(255,255,255,.10);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.22);
+    }
+
+    body.dark .lang-btn,
+    body.dark .theme-toggle{
+      color:#c3cbd0;
+    }
+
+    body.dark .lang-btn:hover,
+    body.dark .lang-btn.active,
+    body.dark .theme-toggle:hover{
+      background:#2b2420;
+      color:#fff;
+    }
+
+    body.dark .coming-description{
+      color:#c2c9ce;
+      border-color:rgba(255,255,255,.30);
+    }
+
+    body.dark .coming-note{
+      background:rgba(255,255,255,.05);
+      border-color:rgba(255,255,255,.08);
+      color:#c2c9ce;
+    }
+
+    body.dark .coming-photo::before{
+      background:rgba(255,255,255,.035);
+      border-color:rgba(255,255,255,.08);
+    }
+
+    body.dark .footer{
+      background:#0a0e12;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
+      .coming-soon{
+        padding:
+          120px 0
+          55px;
+      }
+
+      .coming-grid{
+        grid-template-columns:1fr;
+
+        gap:10px;
+      }
+
+      .coming-copy{
+        padding-left:0;
+
+        text-align:center;
+      }
+
+      .coming-description{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .coming-note{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .coming-photo{
+        min-height:470px;
+
+        margin-top:-15px;
+      }
+
+      .coming-photo img{
+        max-height:520px;
+      }
+    }
+
+    @media(max-width:620px){
+
+      .container{
+        width:calc(100% - 28px);
+      }
+
+      .nav{
+        top:8px;
+      }
+
+      .nav-brand{
+        font-size:12px;
+      }
+
+      .lang-btn{
+        min-width:30px;
+        padding:0 6px;
+      }
+
+      .theme-toggle{
+        min-width:30px;
+        padding:0 6px;
+      }
+
+      .coming-soon{
+        padding:
+          105px 0
+          35px;
+      }
+
+      .coming-title{
+        font-size:54px;
+      }
+
+      .coming-description{
+        font-size:13px;
+
+        margin-top:24px;
+        padding-top:17px;
+      }
+
+      .coming-note{
+        font-size:10px;
+      }
+
+      .coming-photo{
+        min-height:370px;
+
+        margin-top:-5px;
+      }
+
+      .coming-photo::before{
+        width:330px;
+      }
+
+      .coming-photo img{
+        width:100%;
+        max-height:430px;
+      }
+
+      .coming-photo::after{
+        width:220px;
+        height:55px;
+        bottom:8px;
+      }
+
+      /* FOOTER LUÔN Ở CHÂN TRANG */
+
+      .footer{
+        padding:16px 0;
+      }
+
+      .footer-inner{
+        display:block;
+
+        text-align:center;
+
+        font-size:10px;
+      }
+
+      .footer-inner div + div{
+        margin-top:5px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      html{
+        scroll-behavior:auto;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+        transition:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- =========================
+         NAV
+    ========================== -->
+
+    <nav class="nav">
+      <div class="nav-inner">
+
+        <a href="#" class="nav-brand">
+          Vũ Nguyệt Ánh
+        </a>
+
+        <div class="nav-actions">
+
+          <button
+            class="lang-btn active"
+            data-lang="vi"
+            type="button"
+          >
+            VI
+          </button>
+
+          <button
+            class="lang-btn"
+            data-lang="en"
+            type="button"
+          >
+            EN
+          </button>
+
+          <button
+            class="lang-btn"
+            data-lang="fr"
+            type="button"
+          >
+            FR
+          </button>
+
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Dark Mode"
+            title="Dark Mode"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- =========================
+         COMING SOON
+    ========================== -->
+
+    <main class="coming-soon">
+
+      <div class="container">
+
+        <div class="coming-grid">
+
+          <!-- LEFT -->
+
+          <div class="coming-copy reveal">
+
+            <p
+              class="kicker"
+              data-i18n="kicker"
+            >
+              Website đang được xây dựng
+            </p>
+
+            <h1 class="coming-title">
+
+              <span data-i18n="titleLine1">
+                Sắp
+              </span>
+
+              <em data-i18n="titleLine2">
+                ra mắt
+              </em>
+
+            </h1>
+
+            <p
+              class="coming-description"
+              data-i18n="description"
+            >
+              Website chính thức của Vũ Nguyệt Ánh
+              đang được hoàn thiện. Một không gian
+              mới để kết nối, chia sẻ và khám phá
+              những hoạt động, dự án và hành trình
+              phía trước.
+            </p>
+
+            <div
+              class="coming-note"
+              data-i18n="note"
+            >
+              <i class="fa-solid fa-sparkles"></i>
+              Website sẽ sớm trở lại
+            </div>
+
+          </div>
+
+
+          <!-- RIGHT / PHOTO -->
+
+          <div class="coming-photo reveal photo-reveal">
+
+            <img
+              src="https://image-namanhstudio.weebly.com/uploads/1/5/5/3/155356283/published/6a9a13f0-37d6-4c8b-906a-0595ae0e8143.png?1787428435"
+              alt="Vũ Nguyệt Ánh"
+              loading="eager"
+              decoding="async"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+      <div class="container footer-inner">
+
+        <div class="footer-brand">
+          © 2026 <strong>Vũ Nguyệt Ánh</strong>.
+          <span data-i18n="copyright">
+            All rights reserved.
+          </span>
+        </div>
+
+        <div>
+          www.nguyetanh.biz
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+    (function(){
+
+      /* =========================
+         TRANSLATIONS
+      ========================== */
+
+      const translations = {
+
+        vi:{
+          kicker:"Website đang được xây dựng",
+          titleLine1:"Sắp",
+          titleLine2:"ra mắt",
+          description:
+            "Website chính thức của Vũ Nguyệt Ánh đang được hoàn thiện. Một không gian mới để kết nối, chia sẻ và khám phá những hoạt động, dự án và hành trình phía trước.",
+          note:"Website sẽ sớm trở lại",
+          copyright:"All rights reserved."
+        },
+
+        en:{
+          kicker:"Website under construction",
+          titleLine1:"Coming",
+          titleLine2:"soon",
+          description:
+            "The official website of Vũ Nguyệt Ánh is currently being redesigned. A new space to connect, share and discover upcoming activities, projects and journeys.",
+          note:"The website will be back soon",
+          copyright:"All rights reserved."
+        },
+
+        fr:{
+          kicker:"Site web en construction",
+          titleLine1:"Bientôt",
+          titleLine2:"disponible",
+          description:
+            "Le site officiel de Vũ Nguyệt Ánh est actuellement en cours de création. Un nouvel espace pour se connecter, partager et découvrir ses activités, projets et parcours.",
+          note:"Le site sera bientôt de retour",
+          copyright:"Tous droits réservés."
+        }
+
+      };
+
+
+      /* =========================
+         LANGUAGE
+      ========================== */
+
+      function setLanguage(lang){
+
+        const dict =
+          translations[lang] ||
+          translations.vi;
+
+        document.documentElement.lang = lang;
+
+        document
+          .querySelectorAll("[data-i18n]")
+          .forEach(function(el){
+
+            const key = el.dataset.i18n;
+
+            if(dict[key] !== undefined){
+              el.textContent = dict[key];
+            }
+
+          });
+
+        document
+          .querySelectorAll(".lang-btn")
+          .forEach(function(btn){
+
+            btn.classList.toggle(
+              "active",
+              btn.dataset.lang === lang
+            );
+
+          });
+
+        localStorage.setItem(
+          "vna-coming-lang",
+          lang
+        );
+      }
+
+
+      document
+        .querySelectorAll(".lang-btn")
+        .forEach(function(btn){
+
+          btn.addEventListener(
+            "click",
+            function(){
+
+              setLanguage(
+                btn.dataset.lang
+              );
+
+            }
+          );
+
+        });
+
+
+      setLanguage(
+        localStorage.getItem("vna-coming-lang") || "vi"
+      );
+
+
+      /* =========================
+         DARK MODE
+      ========================== */
+
+      const themeToggle =
+        document.getElementById("themeToggle");
+
+
+      function setTheme(theme){
+
+        document.body.classList.toggle(
+          "dark",
+          theme === "dark"
+        );
+
+        themeToggle.innerHTML =
+          theme === "dark"
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+
+        themeToggle.setAttribute(
+          "aria-label",
+          theme === "dark"
+            ? "Light Mode"
+            : "Dark Mode"
+        );
+
+        themeToggle.title =
+          theme === "dark"
+            ? "Light Mode"
+            : "Dark Mode";
+
+        localStorage.setItem(
+          "vna-coming-theme",
+          theme
+        );
+      }
+
+
+      setTheme(
+        localStorage.getItem("vna-coming-theme") || "light"
+      );
+
+
+      themeToggle.addEventListener(
+        "click",
+        function(){
+
+          const isDark =
+            document.body.classList.contains("dark");
+
+          setTheme(
+            isDark ? "light" : "dark"
+          );
+
+        }
+      );
+
+
+      /* =========================
+         REVEAL ANIMATION
+      ========================== */
+
+      const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+      if(
+        "IntersectionObserver" in window
+      ){
+
+        const observer =
+          new IntersectionObserver(
+            function(entries){
+
+              entries.forEach(
+                function(entry){
+
+                  if(entry.isIntersecting){
+
+                    entry.target.classList.add(
+                      "visible"
+                    );
+
+                    observer.unobserve(
+                      entry.target
+                    );
+
+                  }
+
+                }
+              );
+
+            },
+            {
+              threshold:.12
+            }
+          );
+
+
+        revealElements.forEach(
+          function(el){
+
+            observer.observe(el);
+
+          }
+        );
+
+      }else{
+
+        revealElements.forEach(
+          function(el){
+
+            el.classList.add(
+              "visible"
+            );
+
+          }
+        );
+
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
