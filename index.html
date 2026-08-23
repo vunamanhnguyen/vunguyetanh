@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vũ Nguyệt Ánh — Coming Soon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --ink:#25313b;
+      --muted:#68727a;
+      --peach:#f5c6b2;
+      --peach-light:#f9e5dc;
+      --peach-deep:#e99a78;
+      --cream:#fbf7f3;
+      --white:#fff;
+      --line:rgba(37,49,59,.12);
+
+      --serif:"Playfair Display",Georgia,serif;
+      --sans:"DM Sans",Arial,sans-serif;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html,
+    body{
+      margin:0;
+      width:100%;
+      min-height:100%;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
+      color:var(--ink);
+      background:var(--cream);
+      font-family:var(--sans);
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+
+    a{
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    /* =========================
+       PAGE
+    ========================= */
+
+    .page{
+      position:relative;
+      min-height:100vh;
+
+      display:flex;
+      flex-direction:column;
+
+      overflow:hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 18%,
+          rgba(245,198,178,.72),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 12% 82%,
+          rgba(249,229,220,.7),
+          transparent 28%
+        ),
+        linear-gradient(
+          135deg,
+          #fbf7f3 0%,
+          #f8eee8 55%,
+          #f2d8cc 100%
+        );
+    }
+
+    /* =========================
+       NAV
+    ========================= */
+
+    .nav{
+      position:relative;
+      z-index:20;
+
+      width:min(1050px,calc(100% - 28px));
+      margin:16px auto 0;
+
+      padding:9px 10px 9px 18px;
+
+      border:1px solid rgba(255,255,255,.78);
+
+      background:rgba(255,255,255,.76);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border-radius:999px;
+
+      box-shadow:
+        0 12px 35px rgba(50,38,31,.08);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+    }
+
+    .nav-brand{
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    /* LANGUAGE */
+
+    .lang-btn{
+      border:0;
+      background:transparent;
+
+      color:#59646d;
+
+      height:34px;
+      min-width:34px;
+
+      padding:0 8px;
+
+      border-radius:999px;
+
+      cursor:pointer;
+
+      font:700 10px var(--sans);
+
+      transition:.2s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active{
+      background:var(--peach-light);
+      color:var(--ink);
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .coming-soon{
+      position:relative;
+      flex:1;
+
+      width:100%;
+
+      display:flex;
+      align-items:center;
+
+      padding:50px 0 60px;
+    }
+
+    .container{
+      width:min(1160px,calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .coming-grid{
+      display:grid;
+
+      grid-template-columns:.9fr 1.1fr;
+
+      gap:55px;
+
+      align-items:center;
+    }
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .coming-copy{
+      padding-left:4%;
+
+      position:relative;
+      z-index:3;
+    }
+
+    .kicker{
+      margin:0 0 14px;
+
+      color:#a36e59;
+
+      font-size:11px;
+      font-weight:700;
+
+      letter-spacing:.18em;
+
+      text-transform:uppercase;
+    }
+
+    .title{
+      margin:0;
+
+      font-family:var(--serif);
+
+      font-size:clamp(50px,7vw,82px);
+
+      line-height:.98;
+
+      letter-spacing:-.055em;
+
+      font-weight:600;
+    }
+
+    .title em{
+      display:block;
+
+      color:#b67f67;
+
+      font-style:italic;
+      font-weight:500;
+    }
+
+    .description{
+      max-width:470px;
+
+      margin:28px 0 0;
+
+      padding-top:18px;
+
+      border-top:1px solid rgba(37,49,59,.28);
+
+      color:#56616a;
+
+      font-size:14px;
+
+      line-height:1.8;
+    }
+
+    .description strong{
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .coming-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+
+      margin-top:25px;
+    }
+
+    .contact-button{
+      display:inline-flex;
+
+      align-items:center;
+      justify-content:center;
+
+      gap:9px;
+
+      padding:11px 18px;
+
+      border-radius:999px;
+
+      background:var(--ink);
+      color:#fff;
+
+      text-decoration:none;
+
+      font-size:12px;
+      font-weight:700;
+
+      box-shadow:
+        0 10px 25px rgba(37,49,59,.15);
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .contact-button:hover{
+      transform:translateY(-3px);
+
+      box-shadow:
+        0 14px 30px rgba(37,49,59,.2);
+    }
+
+    /* =========================
+       IMAGE
+    ========================= */
+
+    .coming-photo{
+      position:relative;
+
+      min-height:560px;
+
+      display:flex;
+
+      align-items:flex-end;
+      justify-content:center;
+    }
+
+    .photo-circle{
+      position:absolute;
+
+      width:min(560px,95%);
+
+      aspect-ratio:1;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,.34);
+
+      border:1px solid rgba(255,255,255,.7);
+
+      box-shadow:
+        inset 0 0 50px rgba(255,255,255,.15);
+    }
+
+    .photo-circle::after{
+      content:"";
+
+      position:absolute;
+
+      inset:9%;
+
+      border-radius:50%;
+
+      border:1px solid rgba(255,255,255,.45);
+    }
+
+    .coming-photo img{
+      position:relative;
+      z-index:2;
+
+      width:min(610px,100%);
+
+      max-height:650px;
+
+      object-fit:contain;
+
+      object-position:center bottom;
+
+      filter:
+        drop-shadow(
+          20px 25px 20px rgba(64,42,34,.15)
+        );
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer{
+      position:relative;
+      z-index:10;
+
+      width:100%;
+
+      padding:18px 0;
+
+      background:rgba(255,255,255,.58);
+
+      border-top:1px solid rgba(37,49,59,.08);
+
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+
+      color:#68727a;
+
+      font-size:10px;
+    }
+
+    .footer-inner{
+      width:min(1160px,calc(100% - 40px));
+
+      margin:auto;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:20px;
+    }
+
+    .footer strong{
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    /* =========================
+       DECORATION
+    ========================= */
+
+    .decor{
+      position:absolute;
+
+      pointer-events:none;
+
+      border-radius:50%;
+
+      border:1px solid rgba(163,110,89,.12);
+    }
+
+    .decor-one{
+      width:220px;
+      height:220px;
+
+      left:-110px;
+      top:25%;
+
+      opacity:.7;
+    }
+
+    .decor-two{
+      width:120px;
+      height:120px;
+
+      right:5%;
+      bottom:18%;
+
+      opacity:.5;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .reveal{
+      opacity:0;
+
+      transform:translateY(18px);
+
+      animation:reveal .8s ease forwards;
+    }
+
+    .reveal-delay{
+      animation-delay:.15s;
+    }
+
+    .reveal-delay-2{
+      animation-delay:.3s;
+    }
+
+    @keyframes reveal{
+      to{
+        opacity:1;
+        transform:none;
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:900px){
+
+      .nav{
+        margin-top:10px;
+      }
+
+      .coming-soon{
+        padding:45px 0 55px;
+      }
+
+      .coming-grid{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+
+      .coming-copy{
+        padding-left:0;
+        text-align:center;
+      }
+
+      .description{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .coming-actions{
+        justify-content:center;
+      }
+
+      .coming-photo{
+        min-height:470px;
+      }
+
+      .coming-photo img{
+        max-height:520px;
+      }
+    }
+
+    @media(max-width:620px){
+
+      .container{
+        width:calc(100% - 28px);
+      }
+
+      .nav{
+        width:calc(100% - 18px);
+
+        padding:8px 10px 8px 13px;
+      }
+
+      .nav-brand{
+        font-size:12px;
+      }
+
+      .nav-actions{
+        gap:2px;
+      }
+
+      .lang-btn{
+        min-width:30px;
+        padding:0 6px;
+
+        font-size:9px;
+      }
+
+      .coming-soon{
+        padding:40px 0 35px;
+      }
+
+      .title{
+        font-size:53px;
+      }
+
+      .description{
+        font-size:13px;
+      }
+
+      .coming-photo{
+        min-height:390px;
+      }
+
+      .coming-photo img{
+        max-height:440px;
+      }
+
+      .photo-circle{
+        width:92%;
+      }
+
+      .footer{
+        padding:15px 0;
+      }
+
+      .footer-inner{
+        display:block;
+        text-align:center;
+      }
+
+      .footer-inner div + div{
+        margin-top:4px;
+      }
+    }
+
+    @media(max-width:380px){
+
+      .nav-brand{
+        font-size:11px;
+      }
+
+      .lang-btn{
+        min-width:27px;
+        padding:0 4px;
+        font-size:8px;
+      }
+
+      .title{
+        font-size:48px;
+      }
+    }
+
+    @media(max-height:720px) and (min-width:901px){
+
+      .coming-soon{
+        padding-top:30px;
+        padding-bottom:35px;
+      }
+
+      .coming-photo{
+        min-height:440px;
+      }
+
+      .coming-photo img{
+        max-height:500px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="nav">
+
+    <div class="nav-inner">
+
+      <a href="#" class="nav-brand">
+        Vũ Nguyệt Ánh
+      </a>
+
+      <div class="nav-actions">
+
+        <button
+          class="lang-btn active"
+          data-lang="vi"
+          type="button"
+        >
+          VI
+        </button>
+
+        <button
+          class="lang-btn"
+          data-lang="en"
+          type="button"
+        >
+          EN
+        </button>
+
+        <button
+          class="lang-btn"
+          data-lang="fr"
+          type="button"
+        >
+          FR
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- DECORATIONS -->
+
+  <div class="decor decor-one"></div>
+  <div class="decor decor-two"></div>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="coming-soon">
+
+    <div class="container">
+
+      <div class="coming-grid">
+
+        <!-- TEXT -->
+
+        <div class="coming-copy">
+
+          <p
+            class="kicker reveal"
+            data-i18n="kicker"
+          >
+            nguyetanh.biz
+          </p>
+
+          <h1
+            class="title reveal reveal-delay"
+            data-i18n="title"
+          >
+            Sắp
+            <em>ra mắt.</em>
+          </h1>
+
+          <p
+            class="description reveal reveal-delay-2"
+            data-i18n="description"
+          >
+            Website chính thức của
+            <strong>Vũ Nguyệt Ánh</strong>
+            đang được hoàn thiện.
+            <br><br>
+            Một không gian mới để kết nối,
+            chia sẻ hành trình cá nhân,
+            các hoạt động chuyên môn,
+            doanh nghiệp và những dự án đang được triển khai.
+          </p>
+
+          <div class="coming-actions reveal reveal-delay-2">
+
+            <a
+              class="contact-button"
+              href="mailto:vu@nguyetanh.biz"
+              data-i18n="contactButton"
+            >
+              <i class="fa-regular fa-envelope"></i>
+              Liên hệ
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="coming-photo reveal reveal-delay">
+
+          <div class="photo-circle"></div>
+
+          <img
+            src="https://image-namanhstudio.weebly.com/uploads/1/5/5/3/155356283/published/6a9a13f0-37d6-4c8b-906a-0595ae0e8143.png?1787428435"
+            alt="Vũ Nguyệt Ánh"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+      <div data-i18n="copyright">
+        © 2026
+        <strong>Vũ Nguyệt Ánh</strong>.
+        All rights reserved.
+      </div>
+
+      <div>
+        nguyetanh.biz
+      </div>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- =========================
+     TRANSLATIONS
+========================== -->
+
+<script>
+
+(function(){
+
+  const translations = {
+
+    vi: {
+
+      kicker:
+        "nguyetanh.biz",
+
+      title:
+        'Sắp<br><em>ra mắt.</em>',
+
+      description:
+        'Website chính thức của <strong>Vũ Nguyệt Ánh</strong> đang được hoàn thiện.<br><br>Một không gian mới để kết nối, chia sẻ hành trình cá nhân, các hoạt động chuyên môn, doanh nghiệp và những dự án đang được triển khai.',
+
+      contactButton:
+        '<i class="fa-regular fa-envelope"></i> Liên hệ',
+
+      copyright:
+        '© 2026 <strong>Vũ Nguyệt Ánh</strong>. All rights reserved.'
+    },
+
+
+    en: {
+
+      kicker:
+        "nguyetanh.biz",
+
+      title:
+        'Coming<br><em>Soon.</em>',
+
+      description:
+        'The official website of <strong>Vũ Nguyệt Ánh</strong> is currently under construction.<br><br>A new space to connect, share her personal journey, professional activities, businesses and upcoming projects.',
+
+      contactButton:
+        '<i class="fa-regular fa-envelope"></i> Contact',
+
+      copyright:
+        '© 2026 <strong>Vũ Nguyệt Ánh</strong>. All rights reserved.'
+    },
+
+
+    fr: {
+
+      kicker:
+        "nguyetanh.biz",
+
+      title:
+        'Bientôt<br><em>en ligne.</em>',
+
+      description:
+        'Le site officiel de <strong>Vũ Nguyệt Ánh</strong> est actuellement en construction.<br><br>Un nouvel espace pour découvrir son parcours personnel, ses activités professionnelles, ses entreprises et ses futurs projets.',
+
+      contactButton:
+        '<i class="fa-regular fa-envelope"></i> Contact',
+
+      copyright:
+        '© 2026 <strong>Vũ Nguyệt Ánh</strong>. Tous droits réservés.'
+    }
+
+  };
+
+
+  /* =========================
+     LANGUAGE
+  ========================== */
+
+  function setLanguage(lang){
+
+    const dict =
+      translations[lang] ||
+      translations.vi;
+
+    document.documentElement.lang = lang;
+
+    document
+      .querySelectorAll("[data-i18n]")
+      .forEach(function(el){
+
+        const key = el.dataset.i18n;
+
+        if(dict[key] !== undefined){
+
+          el.innerHTML = dict[key];
+
+        }
+
+      });
+
+
+    document
+      .querySelectorAll(".lang-btn")
+      .forEach(function(btn){
+
+        btn.classList.toggle(
+          "active",
+          btn.dataset.lang === lang
+        );
+
+      });
+
+
+    localStorage.setItem(
+      "vna-coming-lang",
+      lang
+    );
+
+  }
+
+
+  document
+    .querySelectorAll(".lang-btn")
+    .forEach(function(btn){
+
+      btn.addEventListener(
+        "click",
+        function(){
+
+          setLanguage(
+            btn.dataset.lang
+          );
+
+        }
+      );
+
+    });
+
+
+  const savedLanguage =
+    localStorage.getItem(
+      "vna-coming-lang"
+    ) || "vi";
+
+
+  setLanguage(savedLanguage);
+
+})();
+
+</script>
+
+</body>
+</html>
